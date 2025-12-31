@@ -1,9 +1,18 @@
 package nl.tudelft.jpacman.board;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.Mockito.mock;
 
+import com.google.common.collect.Lists;
+import nl.tudelft.jpacman.level.LevelFactory;
+import nl.tudelft.jpacman.level.MapParser;
+import nl.tudelft.jpacman.npc.ghost.GhostFactory;
+import nl.tudelft.jpacman.sprite.PacManSprites;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.internal.matchers.Null;
+
+import java.util.ArrayList;
 
 /**
  * Test suite to confirm that {@link Unit}s correctly (de)occupy squares.
@@ -32,6 +41,7 @@ class OccupantTest {
     @Test
     void noStartSquare() {
         // TODO
+        assert(! unit.hasSquare());
     }
 
     /**
@@ -41,6 +51,13 @@ class OccupantTest {
     @Test
     void testOccupy() {
         // TODO
+        PacManSprites sprites = new PacManSprites();
+        MapParser parser = new MapParser(new LevelFactory(sprites, new GhostFactory(
+            sprites)), new BoardFactory(sprites));
+        Board board = parser.parseMap(Lists.newArrayList("####", "#  #", "####")).getBoard();
+
+        unit.occupy(board.squareAt(1, 2));
+        assertThat(unit.getSquare()).isEqualTo(board.squareAt(1, 2));
     }
 
     /**
@@ -50,5 +67,13 @@ class OccupantTest {
     @Test
     void testReoccupy() {
         // TODO
+        PacManSprites sprites = new PacManSprites();
+        MapParser parser = new MapParser(new LevelFactory(sprites, new GhostFactory(
+            sprites)), new BoardFactory(sprites));
+        Board board = parser.parseMap(Lists.newArrayList("####", "#  #", "####")).getBoard();
+
+        unit.occupy(board.squareAt(1, 2));
+        unit.occupy(board.squareAt(1, 2));
+        assertThat(unit.getSquare()).isEqualTo(board.squareAt(1, 2));
     }
 }

@@ -17,7 +17,7 @@ Open `npc.ghost.Inky` class and see how this ghost works, and especially its `ne
 Implement at least 5 JUnit tests (2 good weather and 3 bad weather) for the method `Optional<Direction> nextAiMove()` in a `InkyTest` class.
 
 ## Exercise 3
-The method `squaresAheadOf` in the class `Unit` is not tested. Write at least 3 tests for this method by following the specification-based testing framework.
+1The method `squaresAheadOf` in the cl-ass `Unit` is not tested. Write at least 3 tests for this method by following the specification-based testing framework.
 
 ## BONUS
 There are TODOs in the method `Optional<Direction> nextAiMove()` from the `npc.ghost.Blinky` class. Implement these TODOs and test the method with this new behavior after that.
