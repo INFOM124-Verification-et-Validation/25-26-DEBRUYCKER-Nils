@@ -11,13 +11,13 @@ Analyze the requirements found in `docs/scenarios.md` and derive a decision tabl
 +| **Collidee**    | Pellet  | Ghost   | Pellet             | packmann      | wall             | final pellet |
 +| **Consequence** | nothing | nothing | packman eat pellet | packman death | nothing/ blocked | win game     |
 
-+corr
-+
-+|                 |         |         |                    |               |                  |              |
-+|-----------------|---------|---------|--------------------|---------------|------------------|--------------|
-+| **Collider**    | Ghost   | ghost   | packman            | ghost         | packman          | packman      |
-+| **Collidee**    | Pellet  | Ghost   | Pellet             | packmann      | wall             | final pellet |
-+| **Consequence** | nothing | nothing | packman eat pellet | packman death | nothing/ blocked | win game     |
+corr
+
+|                 |         |         |                    |               |                  |              |
+|-----------------|---------|---------|--------------------|---------------|------------------|--------------|
+| **Collider**    | Ghost   | ghost   | packman            | ghost         | packman          | packman      |
+| **Collidee**    | Pellet  | Ghost   | Pellet             | packmann      | wall             | final pellet |
+| **Consequence** | nothing | nothing | packman eat pellet | packman death | nothing/ blocked | win game     |
 
 Based on the decision table above, derive a JUnit test suite for the `level.PlayerCollisions` class using the **specification-based testing** (see the `analysis-template.md` file) and **structural testing** frameworks. You should be as rigorous as possible here. Think not only of collisions that result in something, but also on collisions where "nothing happens".
 -
